@@ -1,5 +1,5 @@
 """ Title: slytherinSerpents-whatabook.py
-    Authors: Michael Christman and Jennifer Hoitenga
+    Author: Michael Christman and Jennifer Hoitenga
     Date: July 12, 2023
     Description: Whatabook Python Console App
     Sources Used:
@@ -8,18 +8,18 @@
     Add Colour to Text in Python: https://www.kaggle.com/discussions/general/273188
 """
 
-# Import the MongoClient
+# Importing the MongoClient
 from pymongo import MongoClient
 
-# Build a connection string.
+# Building a connection string.
 client = MongoClient('mongodb+srv://web335_user:s3cr3t@bellevueuniversity.g473hiy.mongodb.net/whatabookretryWrites=true&w=majority')
 db = client['whatabook']
 print(client)
 
-# Add a blank line for readability.
+# Adding a blank line to improve readability.
 print()
 
-# Displaying a list of books.
+# Displaying a list of books from the books collection.
 print('Displaying all documents in the books collection:')
 for book in db.books.find():
     print("Title:", book.get("title"))
@@ -28,20 +28,20 @@ for book in db.books.find():
     print("Book ID:", book.get("bookId"))
     print() # Add a blank line for readability.
 
-# Displaying a list of books by genre.
+# Displaying a list of books sorted by genre.
 genres = ['Fantasy', 'Fiction', 'History', 'Horror', 'Non Fiction', 'Mystery', 'Romance', 'True Crime']
 
 print('Available Genres:')
 for genre in genres:
     print(genre)
 
-# Add a blank line for readability.
+# Add a blank line to improve readability.
 print()
 
 selected_genre = input('Please select a genre from the list: ')
 print('You selected:', selected_genre)
 
-# Add a blank line for readability.
+# Add a blank line to improve readability.
 print()
 
 print('Displaying all', selected_genre, 'books:')
@@ -52,7 +52,7 @@ for book in db.books.find({"genre": selected_genre}):
     print("Book ID:", book.get("bookId"))
     print() # Add a blank line for readability.
 
-# Displaying a list of customers wishlist by customerId.
+# Displaying a list of customers wishlist sorted by customerId.
 customer_id = input('Please enter your customer ID to view your wishlist: ')
 
 try:
