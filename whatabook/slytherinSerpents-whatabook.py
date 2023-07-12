@@ -29,7 +29,7 @@ for book in db.books.find():
     print() # Add a blank line for readability.
 
 # Displaying a list of books by genre.
-genres = ['Fantasy', 'Horror', 'Fiction',]
+genres = ['Fantasy', 'Fiction', 'History', 'Horror', 'Non Fiction', 'Mystery', 'Romance', 'True Crime']
 
 print('Available Genres:')
 for genre in genres:
