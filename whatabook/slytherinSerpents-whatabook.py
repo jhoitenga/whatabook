@@ -1,5 +1,5 @@
 """ Title: slytherinSerpents-whatabook.py
-    Author: Michael Christman and Jennifer Hoitenga
+    Authors: Michael Christman and Jennifer Hoitenga
     Date: July 12, 2023
     Description: Whatabook Python Console App
     Sources Used:
