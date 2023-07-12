@@ -190,13 +190,13 @@ mayaWishlist = {
 };
 
 emmittWishlist = {
-  wishlistId: 'w502',
+  wishlistId: 'w503',
   customerId: 'c1008',
   bookId: ['0399501487', '0486282112'],
 };
 
 sashaWishlist = {
-  wishlistId: 'w503',
+  wishlistId: 'w504',
   customerId: 'c1009',
   bookId: ['0486282112', '0553471074'],
 };
