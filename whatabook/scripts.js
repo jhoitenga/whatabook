@@ -213,6 +213,12 @@ db.books.insertOne(flowerMoon);
 db.books.insertOne(haunting);
 db.books.insertOne(lizzie);
 db.books.insertOne(wwII);
+db.books.insertOne(fellowship);
+db.books.insertOne(twoTowers);
+db.books.insertOne(IT);
+db.books.insertOne(carrie);
+db.books.insertOne(fireBlood);
+db.books.insertOne(gameThrones);
 
 // Adding the data for the customers
 emma = {
