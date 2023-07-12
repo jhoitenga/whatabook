@@ -1,18 +1,18 @@
 /**
  * Title: scripts.js
- * Author: Michael Christman and Jennifer Hoitenga
+ * Authors: Michael Christman and Jennifer Hoitenga
  * Date: July 11th, 2023
  * Description: MongoDB Shell Scripts for the books and customers collections.
  * Sources Used:
  * WEB 335 houses.js by Professor Krasso
  */
 
-// Delete the books, customers and wishlist collections.
+// Deleting (dropping) the books, customers and wishlist collections.
 db.books.drop();
 db.customers.drop();
 db.wishlist.drop();
 
-// Create the books collection.
+// Creating the books collection
 db.createCollection('books', {
   validator: {
     $jsonSchema: {
@@ -36,7 +36,7 @@ db.createCollection('books', {
   },
 });
 
-// Create the customers collection.
+// Creating the customers collection.
 db.createCollection('customers', {
   validator: {
     $jsonSchema: {
@@ -57,7 +57,7 @@ db.createCollection('customers', {
   },
 });
 
-// Create the wishlist collection.
+// Creating the wishlist collection.
 db.createCollection('wishlist', {
   validator: {
     $jsonSchema: {
@@ -81,7 +81,7 @@ db.createCollection('wishlist', {
   },
 });
 
-// Adding the book data.
+// Adding the book data for the books collection
 frankenstein = {
   bookId: '0486282112',
   title: 'Frankenstein',
@@ -159,7 +159,49 @@ wwII = {
   author: 'DK',
 };
 
-// Insert the books documents.
+fellowship = {
+  bookId: '173982504',
+  title: 'The Lord of the Rings: The Fellowship of the Ring',
+  genre: 'Fantasy',
+  author: 'J.R.R. Tolkien',
+};
+
+twotowers = {
+  bookId: '173982506',
+  title: 'The Lord of the Rings: The Two Towers',
+  genre: 'Fantasy',
+  author: 'J.R.R. Tolkien',
+};
+
+IT = {
+  bookId: '184193625',
+  title: 'Stephen King's IT',
+  genre: 'Horror',
+  author: 'Stephen King',
+};
+
+carrie = {
+  bookId: '184193627',
+  title: 'Stephen King's IT',
+  genre: 'Horror',
+  author: 'Stephen King',
+};
+
+fireBlood = {
+  bookId: '098286244',
+  title: 'Fire and Blood',
+  genre: 'Fantasy',
+  author: 'George R.R. Martin',
+};
+
+gameThrones = {
+  bookId: '098286240',
+  title: 'A Game of Thrones',
+  genre: 'Fantasy',
+  author: 'George R.R. Martin',
+};
+
+// Inserting all the documents for books.
 db.books.insertOne(potterPhilos);
 db.books.insertOne(frankenstein);
 db.books.insertOne(flies);
@@ -172,7 +214,7 @@ db.books.insertOne(haunting);
 db.books.insertOne(lizzie);
 db.books.insertOne(wwII);
 
-// Adding the customer data.
+// Adding the data for the customers
 emma = {
   customerId: 'c1005',
   firstName: 'Emma',
@@ -203,14 +245,14 @@ sasha = {
   lastName: 'Smith',
 };
 
-// Insert the customer documents.
+// Inserting all of the customer documents.
 db.customers.insertOne(emma);
 db.customers.insertOne(mark);
 db.customers.insertOne(maya);
 db.customers.insertOne(emmitt);
 db.customers.insertOne(sasha);
 
-// Adding the wishlist data.
+// Adding the data for the wishlist
 emmaWishlist = {
   wishlistId: 'w500',
   customerId: 'c1005',
@@ -241,7 +283,7 @@ sashaWishlist = {
   bookId: ['0486282112', '0553471074'],
 };
 
-// Insert the wishlist collection.
+// Inserting the wishlist collection documents
 db.wishlist.insertOne(emmaWishlist);
 db.wishlist.insertOne(markWishlist);
 db.wishlist.insertOne(mayaWishlist);
