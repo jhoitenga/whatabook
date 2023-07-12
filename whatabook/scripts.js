@@ -19,6 +19,9 @@ db.createCollection('books', {
       bsonType: 'object',
       required: ['bookId', 'title', 'genre', 'author'],
       properties: {
+        bookId: {
+          bsonType: 'string',
+        },
         title: {
           bsonType: 'string',
         },
@@ -26,9 +29,6 @@ db.createCollection('books', {
           bsonType: 'string',
         },
         author: {
-          bsonType: 'string',
-        },
-        bookId: {
           bsonType: 'string',
         },
       },
@@ -43,13 +43,13 @@ db.createCollection('customers', {
       bsonType: 'object',
       required: ['customerId', 'firstName', 'lastName'],
       properties: {
+        customerId: {
+          bsonType: 'string',
+        },
         firstName: {
           bsonType: 'string',
         },
         lastName: {
-          bsonType: 'string',
-        },
-        customerId: {
           bsonType: 'string',
         },
       },
@@ -62,22 +62,19 @@ db.createCollection('wishlist', {
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['customerId', 'bookId', 'title', 'genre', 'author'],
+      required: ['wishlistId', 'customerId', 'bookId'],
       properties: {
+        wishlistId: {
+          bsonType: 'string',
+        },
         customerId: {
           bsonType: 'string',
         },
         bookId: {
-          bsonType: 'string',
-        },
-        title: {
-          bsonType: 'string',
-        },
-        genre: {
-          bsonType: 'string',
-        },
-        author: {
-          bsonType: 'string',
+          bsonType: 'array',
+          items: {
+            bsonType: 'string',
+          },
         },
       },
     },
@@ -85,13 +82,6 @@ db.createCollection('wishlist', {
 });
 
 // Adding the book data.
-potterPhilos = {
-  bookId: '0747532745',
-  title: "Harry Potter and the Philosopher's Stone",
-  genre: 'Fantasy',
-  author: 'J. K. Rowling',
-};
-
 frankenstein = {
   bookId: '0486282112',
   title: 'Frankenstein',
@@ -111,6 +101,13 @@ hobbit = {
   title: 'The Hobbit',
   genre: 'Fantasy',
   author: 'J.R.R. Tolkien',
+};
+
+potterPhilos = {
+  bookId: '0747532745',
+  title: "Harry Potter and the Philosopher's Stone",
+  genre: 'Fantasy',
+  author: 'J. K. Rowling',
 };
 
 potterGoblet = {
@@ -174,94 +171,39 @@ db.customers.insertOne(emmitt);
 db.customers.insertOne(sasha);
 
 // Adding the wishlist data.
-emmaWishlist = [
-  {
-    customerId: 'c1005',
-    bookId: '0399501487',
-    title: 'The Lord of the Flies',
-    genre: 'Fiction',
-    author: 'William Golding',
-  },
-  {
-    customerId: 'c1005',
-    bookId: '0486282112',
-    title: 'FrankenStein',
-    genre: 'Horror',
-    author: 'Mary Shelley',
-  },
-];
+emmaWishlist = {
+  wishlistId: 'w500',
+  customerId: 'c1005',
+  bookId: ['0399501487', '0486282112'],
+};
 
-markWishlist = [
-  {
-    customerId: 'c1006',
-    bookId: '0553471074',
-    title: 'The Hobbit',
-    genre: 'Fantasy',
-    author: 'J.R.R. Tolkien',
-  },
-  {
-    customerId: 'c1006',
-    bookId: '0439139600',
-    title: 'Harry Potter and the Goblet of Fire',
-    genre: 'Fantasy',
-    author: 'J. K. Rowling',
-  },
-];
+markWishlist = {
+  wishlistId: 'w501',
+  customerId: 'c1006',
+  bookId: ['0553471074', '0439139600'],
+};
 
-mayaWishlist = [
-  {
-    customerId: 'c1007',
-    bookId: '0439139600',
-    title: 'Harry Potter and the Goblet of Fire',
-    genre: 'Fantasy',
-    author: 'J. K. Rowling',
-  },
-  {
-    customerId: 'c1007',
-    bookId: '1338878921',
-    title: 'Harry Potter and the Sorcerer’s Stone',
-    genre: 'Fantasy',
-    author: 'J. K. Rowling',
-  },
-];
+mayaWishlist = {
+  wishlistId: 'w502',
+  customerId: 'c1007',
+  bookId: ['0439139600', '1338878921'],
+};
 
-emmittWishlist = [
-  {
-    customerId: 'c1008',
-    bookId: '0399501487',
-    title: 'The Lord of the Flies',
-    genre: 'Fiction',
-    author: 'William Golding',
-  },
-  {
-    customerId: 'c1008',
-    bookId: '0486282112',
-    title: 'FrankenStein',
-    genre: 'Horror',
-    author: 'Mary Shelley',
-  },
-];
+emmittWishlist = {
+  wishlistId: 'w502',
+  customerId: 'c1008',
+  bookId: ['0399501487', '0486282112'],
+};
 
-sashaWishlist = [
-  {
-    customerId: 'c1009',
-    bookId: '0486282112',
-    title: 'FrankenStein',
-    genre: 'Horror',
-    author: 'Mary Shelley',
-  },
-  {
-    customerId: 'c1009',
-    bookId: '0553471074',
-    title: 'The Hobbit',
-    genre: 'Fantasy',
-    author: 'J.R.R. Tolkien',
-  },
-];
+sashaWishlist = {
+  wishlistId: 'w503',
+  customerId: 'c1009',
+  bookId: ['0486282112', '0553471074'],
+};
 
 // Insert the wishlist collection.
-db.wishlist.insertMany(emmaWishlist);
-db.wishlist.insertMany(markWishlist);
-db.wishlist.insertMany(mayaWishlist);
-db.wishlist.insertMany(emmittWishlist);
-db.wishlist.insertMany(sashaWishlist);
+db.wishlist.insertOne(emmaWishlist);
+db.wishlist.insertOne(markWishlist);
+db.wishlist.insertOne(mayaWishlist);
+db.wishlist.insertOne(emmittWishlist);
+db.wishlist.insertOne(sashaWishlist);
