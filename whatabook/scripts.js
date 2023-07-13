@@ -160,42 +160,42 @@ wwII = {
 };
 
 fellowship = {
-  bookId: '173982504',
+  bookId: '0547928211',
   title: 'The Lord of the Rings: The Fellowship of the Ring',
   genre: 'Fantasy',
   author: 'J.R.R. Tolkien',
 };
 
-twotowers = {
-  bookId: '173982506',
+twoTowers = {
+  bookId: '0358380243',
   title: 'The Lord of the Rings: The Two Towers',
   genre: 'Fantasy',
   author: 'J.R.R. Tolkien',
 };
 
-IT = {
-  bookId: '184193625',
-  title: 'Stephen King's IT',
+kingIt = {
+  bookId: '0670813028',
+  title: 'Stephen King’s IT',
   genre: 'Horror',
   author: 'Stephen King',
 };
 
 carrie = {
-  bookId: '184193627',
-  title: 'Stephen King's IT',
+  bookId: '0307743667',
+  title: 'Stephen King’s Carrie',
   genre: 'Horror',
   author: 'Stephen King',
 };
 
 fireBlood = {
-  bookId: '098286244',
+  bookId: '1524796301',
   title: 'Fire and Blood',
   genre: 'Fantasy',
   author: 'George R.R. Martin',
 };
 
 gameThrones = {
-  bookId: '098286240',
+  bookId: '0553381687',
   title: 'A Game of Thrones',
   genre: 'Fantasy',
   author: 'George R.R. Martin',
@@ -215,7 +215,7 @@ db.books.insertOne(lizzie);
 db.books.insertOne(wwII);
 db.books.insertOne(fellowship);
 db.books.insertOne(twoTowers);
-db.books.insertOne(IT);
+db.books.insertOne(kingIt);
 db.books.insertOne(carrie);
 db.books.insertOne(fireBlood);
 db.books.insertOne(gameThrones);

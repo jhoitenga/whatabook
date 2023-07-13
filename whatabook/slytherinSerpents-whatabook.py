@@ -1,5 +1,5 @@
 """ Title: slytherinSerpents-whatabook.py
-    Author: Michael Christman and Jennifer Hoitenga
+    Authors: Michael Christman and Jennifer Hoitenga
     Date: July 12, 2023
     Description: Whatabook Python Console App
     Sources Used:
@@ -8,7 +8,7 @@
     Add Colour to Text in Python: https://www.kaggle.com/discussions/general/273188
 """
 
-# Importing the MongoClient
+# Importing the MongoClient.
 from pymongo import MongoClient
 
 # Building a connection string.
@@ -28,7 +28,7 @@ for book in db.books.find():
     print("Book ID:", book.get("bookId"))
     print() # Add a blank line for readability.
 
-# Displaying a list of books sorted by genre.
+# Displaying a list of books by genre.
 genres = ['Fantasy', 'Fiction', 'History', 'Horror', 'Non Fiction', 'Mystery', 'Romance', 'True Crime']
 
 print('Available Genres:')
@@ -50,9 +50,9 @@ for book in db.books.find({"genre": selected_genre}):
     print("Author:", book.get("author"))
     print("Genre:", book.get("genre"))
     print("Book ID:", book.get("bookId"))
-    print() # Add a blank line for readability.
+    print() # Add a blank line to improve readability.
 
-# Displaying a list of customers wishlist sorted by customerId.
+# Displaying a list of customers wishlist by customerId.
 customer_id = input('Please enter your customer ID to view your wishlist: ')
 
 try:
@@ -64,7 +64,7 @@ try:
         last_name = customer.get('lastName', '')
         print("Customer's Name:", f"{first_name} {last_name}".title())  # Format the name using title case
             
-        # Add a blank line for readability.
+        # Add a blank line to improve readability.
         print()
         
         print("Wishlist Details:")

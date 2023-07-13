@@ -1,6 +1,6 @@
 /**
  * Title: slytherinSerpents-whatabook.js
- * Author: Michael Christman and Jennifer Hoitenga
+ * Authors: Michael Christman and Jennifer Hoitenga
  * Date: July 11th, 2023
  * Description: Queries for the WEB 335 WhatABook project
  * Sources Used:
