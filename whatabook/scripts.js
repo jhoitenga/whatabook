@@ -62,11 +62,8 @@ db.createCollection('wishlist', {
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['wishlistId', 'customerId', 'bookId'],
+      required: ['customerId', 'bookId'],
       properties: {
-        wishlistId: {
-          bsonType: 'string',
-        },
         customerId: {
           bsonType: 'string',
         },
@@ -260,31 +257,26 @@ db.customers.insertOne(sasha);
 
 // Adding the data for the wishlist
 emmaWishlist = {
-  wishlistId: 'w500',
   customerId: 'c1005',
   bookId: ['0399501487', '0486282112', '1957635002'],
 };
 
 markWishlist = {
-  wishlistId: 'w501',
   customerId: 'c1006',
   bookId: ['0553471074', '0439139600', '1465481796'],
 };
 
 mayaWishlist = {
-  wishlistId: 'w502',
   customerId: 'c1007',
   bookId: ['0439139600', '1338878921', '0307742482', '0307588378'],
 };
 
 emmittWishlist = {
-  wishlistId: 'w503',
   customerId: 'c1008',
   bookId: ['0399501487', '0486282112'],
 };
 
 sashaWishlist = {
-  wishlistId: 'w504',
   customerId: 'c1009',
   bookId: ['0486282112', '0553471074'],
 };
