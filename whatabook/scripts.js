@@ -198,34 +198,6 @@ gameThrones = {
   author: 'George R.R. Martin',
 };
 
-inColdBlood = {
-  bookId: '0574592798',
-  title: 'In Cold Blood',
-  genre: 'True Crime',
-  author: 'Truman Capote',
-};
-
-lifeMafia = {
-  bookId: '059647283',
-  title: 'Donnie Brasco: My Undercover Life in the Mafia',
-  genre: 'True Crime',
-  author: 'Joseph D. Pistone',
-};
-
-diaryAnne = {
-  bookId: '148760891',
-  title: 'The Diary of a Young Girl',
-  genre: 'History',
-  author: 'Anne Frank',
-};
-
-iFunny = {
-  bookId: '031452607',
-  title: 'I Funny: A Middle School Story',
-  genre: 'Comedy',
-  author: 'James Patterson',
-};
-
 // Inserting all the documents for books.
 db.books.insertOne(potterPhilos);
 db.books.insertOne(frankenstein);
@@ -244,10 +216,6 @@ db.books.insertOne(kingIt);
 db.books.insertOne(carrie);
 db.books.insertOne(fireBlood);
 db.books.insertOne(gameThrones);
-db.books.insertOne(inColdBlood);
-db.books.insertOne(lifeMafia);
-db.books.insertOne(diaryAnne);
-db.books.insertOne(iFunny);
 
 // Adding the data for the customers
 emma = {
