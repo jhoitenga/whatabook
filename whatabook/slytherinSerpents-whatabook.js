@@ -22,12 +22,3 @@ db.books.find({ author: 'J. K. Rowling' });
 
 // Writing a query to display a list of books by bookId.
 db.books.find({ bookId: '0486282112' });
-
-// Writing a query to display a wishlist by customerId.
-db.wishlist.findOne({ customerId: 'c1005' });
-
-// Writing a query to add a book to a customer's wishlist.
-db.wishlist.updateOne({ customerId: 'c1005' }, { $addToSet: { bookId: '148760891' } });
-
-// Writing a query to remove a book from a customer's wishlist.
-db.wishlist.updateOne({ customerId: 'c1005' }, { $pull: { bookId: '148760891' } });
